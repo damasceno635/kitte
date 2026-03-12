@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  position: relative;
+}
+
+/* BACKGROUND POR TRÁS DE TUDO */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./fundo.png');  /* Agora funciona pq tá na mesma pasta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;  /* Fica atrás de tudo */
+}
+
+/* Deixa os cards com fundo semi-transparente pra aparecer o doodle */
+.form-coluna, 
+.lista-coluna, 
+.logo-container {
+  background: rgba(255, 255, 255, 0.9);  /* 90% opaco - dá pra ver o fundo */
+  backdrop-filter: blur(2px);  /* Um leve desfoque no fundo atrás dos cards */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* O resto do seu CSS continua igual */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.colunas-container {
+  display: flex;
+  gap: 30px;
+}
+
+/* Mantém todos os estilos que você já tinha pros inputs, botões, etc */
+/* (todo o CSS que você já tinha depois daqui continua igual) */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* COLUNA DO FORMULÁRIO */
+.form-coluna {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.colunas-container {
+  display: flex;
+  gap: 30px;
+}
+
+.form-coluna h1 {
+  color: #333;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #E87835;
+  padding-bottom: 10px;
+}
+
+.form-coluna label {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.form-coluna input,
+.form-coluna select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.form-coluna input:focus,
+.form-coluna select:focus {
+  outline: none;
+  border-color: #E87835;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-coluna button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  background: #E87835;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-coluna button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* COLUNA DA LISTA */
+.lista-coluna {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.lista-coluna h2 {
+  color: #333;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #E87835;
+  padding-bottom: 10px;
+}
+
+.lista-coluna ul {
+  list-style: none;
+}
+
+.lista-coluna li {
+  background: #f8f9fa;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #E87835;
+  transition: transform 0.3s;
+}
+
+.lista-coluna li:hover {
+  transform: translateX(5px);
+  background: #f0f2f5;
+}
+
+.lista-coluna strong {
+  display: block;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.animal-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.animal-info span {
+  background: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+}
+
+/* Container da logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  background: transparent;  /* Remove o fundo branco */
+}
+
+/* A logo em si - 2x maior e com sombra */
+.logo {
+  max-width: 500px;  /* Aumentei de 200px para 400px (2x maior) */
+  width: 100%;       /* Responsivo */
+  height: auto;
+  filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.3)); /* Sombra pra esquerda */
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
