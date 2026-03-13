@@ -12,15 +12,17 @@ jobs:
     steps:
 
     - name: Baixar código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Instalar Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: 20
 
     - name: Instalar dependências
       run: npm install --legacy-peer-deps
 
     - name: Build do projeto
-      run: npm run build"
+      env:
+        CI: false
+      run: npm run build
