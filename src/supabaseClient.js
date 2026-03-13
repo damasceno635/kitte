@@ -11,15 +11,3 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
 }
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-test("envia dados para o Supabase", async () => {
-
-  const resposta = {
-    data: [{ nome: "Rex" }],
-    error: null
-  };
-
-  expect(resposta.error).toBeNull();
-  expect(resposta.data[0].nome).toBe("Rex");
-
-});
