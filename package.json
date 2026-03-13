@@ -42,6 +42,7 @@
     "@eslint/js": "^10.0.1",
     "cypress": "^15.11.0",
     "eslint": "^9.39.4",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^17.4.0"
   }
